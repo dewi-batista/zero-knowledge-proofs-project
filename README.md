@@ -8,18 +8,18 @@ In this repo there are two implementations, `new-implementation` and `previous-i
 
 Along with this, there are circuits pertaining to elliptic curve scalar multiplication for both a pre-chosen generator and arbitrary on-curve points. These differ by implementation. In `new-implementation/single-circuits` these are given by `doubleAndAddGenerator.circom` and `doubleAndAddAny.circom` and in `previous-implementation/single-circuits` these are given by `escalarmulfix.circom` and `escalarmulany.circom`.
 
-## 🔧 Dependencies  
+## Dependencies  
 
 To be able to compile and run [`Circom`](https://github.com/iden3/circom) circuits see https://docs.circom.io/getting-started/installation/.
 
-## ⚙️ How to run an individual circuit
+## How to run an individual circuit
 
 All invidual circuits are found in the `single-circuits` directory of either implementation's directory and are run in the same way. By example, to run the `new-implementation/single-circuits/doubleAndAddAny.circom` circuit with `new-implementation/single-circuits-inputs/doubleAndAddAny-input.json` as input:
 - in `new-implementation/runSingleCircuit.sh`, change line 2 to `circuit='doubleAndAddAny'` and line 3 to `input='doubleAndAddAny-input'`
 - in `new-implementation/single-circuits/doubleAndAddAny.circom`, add `component main = doubleAndAddAny()` to the final line
 - in a terminal, run `sh new-implementation/runSingleCircuit.sh`
 
-## ⏱️ Benchmarking a multi-input circuit
+## Benchmarking a multi-input circuit
 
 To time a circuit with multiple inputs, use the `averageTimes` function in `benchmarkMultCircuit.ts` and do the following:
 - The first input of `averageTimes` is the circuit's file name.
